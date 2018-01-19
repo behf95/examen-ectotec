@@ -1,0 +1,203 @@
+<html>
+	<head>
+		<title>Green Leaves</title>
+		<style>
+			*
+			{
+				font-family: Calibri, Arial;
+			}
+			
+			input
+			{
+				border-radius: 0.3em;
+				width: 15em;
+			}
+			
+			#ciudad
+			{
+				border-radius: 0.3em;
+				width: 17em;
+			}
+			
+			input:invalid+span:after 
+			{
+				content: '✖';
+				color: red;
+				padding-left: 5px;
+			}
+
+			input:valid+span:after 
+			{
+				content: '✓';
+				color: green;
+				padding-left: 5px;
+			}
+			
+			#btnEnviar
+			{
+				margin-left: 7em;
+				padding: 0.3em;
+				color: #00BFFF;
+				background-color: white;
+				float: right;
+				box-shadow: 2px 2px 5px #999;
+				padding: 0.5em;
+				width: 4em;
+			}
+			
+			#lblTitulo
+			{
+				border: #01DF01 1em solid;
+				border-radius: 1em;
+				display: inline-block;
+				background-color: #01DF01;
+				color: white;
+				width: 25em;
+				box-shadow: 2px 2px 5px #999;
+				margin-bottom: 2em;
+			}
+			
+			#titulo
+			{
+				margin-left: 1em;
+				float:left;
+			}
+			
+			#logo
+			{
+				width: 7em;
+				height: 7em;
+				float: right;
+			}
+		</style>
+		<script type="text/javascript">
+		function guardarDatos() 
+		{
+			if (typeof(Storage) !== "undefined") {
+				localStorage.nombre = document.getElementById("nombretxt").value;
+				localStorage.telefono = document.getElementById("telefonotxt").value;
+				localStorage.email = document.getElementById("emailtxt").value;
+				localStorage.fecha = document.getElementById("fechadtp").value;
+				localStorage.ciudad = document.getElementById("ciudadcmb").value;
+			} 
+			else 
+			{
+				alert("Este navegador no soporta el web storage.");
+			}
+		};
+		</script>
+	</head>
+	<body>
+		<div id="lblTitulo">
+			<h1 id="titulo">Green Leaves</h1>
+			<img id="logo" src="https://www.metrosales.com/wp-content/uploads/2016/09/Green-Initiatives-Leaf.png">
+		</div>
+		<form action="ectotec2.html">
+			<table border="0">
+				<tr>
+					<td>
+						<label for="nombretxt" align="left">Nombre:</label>
+					</td>
+					<td>
+						<input type="text" name="nombre" id="nombretxt" align="right" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required/>
+						<span class="validity"></span><br />			
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="email" align="left">E-mail:</label>
+					</td>
+					<td>
+						<input type="email" id="emailtxt" align="right" required/>
+						<span class="validity"></span><br />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="telefono" align="left">Teléfono:</label>
+					</td>
+					<td>
+						<input type="tel" id="telefonotxt" align="right" pattern="[(]?\d{3}[)]?\s?-?\s?\d{3}\s?-?\s?\d{4}" required/>
+						<span class="validity"></span><br />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="fecha" align="left">Fecha:</label>
+					</td>
+					<td>
+						<input type="date" id="fechadtp" align="right" min="1918-01-01" max="2020-01-01" required/>
+						<span class="validity"></span><br />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="ciudad" align="left">Ciudad y Estado:</label>
+					</td>
+					<td>
+						<select id="ciudadcmb" required>
+							<option value="Abasolo, Nuevo León">Abasolo, Nuevo León</option>
+							<option value="Agualeguas, Nuevo León">Agualeguas, Nuevo León</option>
+							<option value="Los Aldamas, Nuevo León">Los Aldamas, Nuevo León</option>
+							<option value="Allende, Nuevo León">Allende, Nuevo León</option>
+							<option value="Anahuac, Nuevo León">Anahuac, Nuevo León</option>
+							<option value="Apodaca, Nuevo León">Apodaca, Nuevo León</option>
+							<option value="Aramberri, Nuevo León">Aramberri, Nuevo León</option>
+							<option value="Bustamante, Nuevo León">Bustamante, Nuevo León</option>
+							<option value="Cadereyta Jimenez, Nuevo León">Cadereyta Jimenez, Nuevo León</option>
+							<option value="Carmen, Nuevo León">Carmen, Nuevo León</option>
+							<option value="Cerralvo, Nuevo León">Cerralvo, Nuevo León</option>
+							<option value="Cienega de Flores, Nuevo León">Cienega de Flores, Nuevo León</option>
+							<option value="China, Nuevo León">China, Nuevo León</option>
+							<option value="Dr. Arroyo, Nuevo León">Dr. Arroyo, Nuevo León</option>
+							<option value="Dr. Coss, Nuevo León">Dr. Coss, Nuevo León</option>
+							<option value="Dr. Gonzalez, Nuevo León">Dr. Gonzalez, Nuevo León</option>
+							<option value="Galeana, Nuevo León">Galeana, Nuevo León</option>
+							<option value="Garcia, Nuevo León">Garcia, Nuevo León</option>
+							<option value="San Pedro Garza Garcia, Nuevo León">San Pedro Garza Garcia, Nuevo León</option>
+							<option value="Gral. Bravo, Nuevo León">Gral. Bravo, Nuevo León</option>
+							<option value="Gral. Escobedo, Nuevo León">Gral. Escobedo, Nuevo León</option>
+							<option value="Gral. Teran, Nuevo León">Gral. Teran, Nuevo León</option>
+							<option value="Gral. Treviño, Nuevo León">Gral. Treviño, Nuevo León</option>
+							<option value="Gral. Zaragoza, Nuevo León">Gral. Zaragoza, Nuevo León</option>
+							<option value="Gral. Zuazua, Nuevo León">Gral. Zuazua, Nuevo León</option>
+							<option value="Guadalupe, Nuevo León">Guadalupe, Nuevo León</option>
+							<option value="Los Herreras, Nuevo León">Los Herreras, Nuevo León</option>
+							<option value="Higueras, Nuevo León">Higueras, Nuevo León</option>
+							<option value="Hualahuises, Nuevo León">Hualahuises, Nuevo León</option>
+							<option value="Iturbide, Nuevo León">Iturbide, Nuevo León</option>
+							<option value="Juarez, Nuevo León">Juarez, Nuevo León</option>
+							<option value="Lampazos de Naranjo, Nuevo León">Lampazos de Naranjo, Nuevo León</option>
+							<option value="Linares, Nuevo León">Linares, Nuevo León</option>
+							<option value="Marin, Nuevo León">Marin, Nuevo León</option>
+							<option value="Melchor Ocampo, Nuevo León">Melchor Ocampo, Nuevo León</option>
+							<option value="Mier y Noriega, Nuevo León">Mier y Noriega, Nuevo León</option>
+							<option value="Mina, Nuevo León">Mina, Nuevo León</option>
+							<option value="Montemorelos, Nuevo León">Montemorelos, Nuevo León</option>
+							<option value="Monterrey, Nuevo León">Monterrey, Nuevo León</option>
+							<option value="Paras, Nuevo León">Paras, Nuevo León</option>
+							<option value="Pesqueria, Nuevo León">Pesqueria, Nuevo León</option>
+							<option value="Los Ramones, Nuevo León">Los Ramones, Nuevo León</option>
+							<option value="Rayones, Nuevo León">Rayones, Nuevo León</option>
+							<option value="Sabinas Hidalgo, Nuevo León">Sabinas Hidalgo, Nuevo León</option>
+							<option value="Salinas Victoria, Nuevo León">Salinas Victoria, Nuevo León</option>
+							<option value="San Nicolas de los Garza, Nuevo León">San Nicolas de los Garza, Nuevo León</option>
+							<option value="Hidalgo, Nuevo León">Hidalgo, Nuevo León</option>
+							<option value="Santa Catarina, Nuevo León">Santa Catarina, Nuevo León</option>
+							<option value="Santiago, Nuevo León">Santiago, Nuevo León</option>
+							<option value="Vallecillo, Nuevo León">Vallecillo, Nuevo León</option>
+							<option value="Villaldama, Nuevo León">Villaldama, Nuevo León</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input id="btnEnviar" type="submit" value="Enviar" align="center" onclick="guardarDatos()"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

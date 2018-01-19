@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>Green Leaves</title>
+		<style>
+			*
+			{
+				font-family: Calibri, Arial;
+			}
+			
+			#lblTitulo
+			{
+				border: #01DF01 1em solid;
+				border-radius: 1em;
+				display: inline-block;
+				background-color: #01DF01;
+				color: white;
+				width: 25em;
+				box-shadow: 2px 2px 5px #999;
+				margin-bottom: 2em;
+			}
+			
+			#titulo
+			{
+				margin-left: 1em;
+				float:left;
+			}
+			
+			#logo
+			{
+				width: 7em;
+				height: 7em;
+				float: right;
+			}
+			
+			#mensaje
+			{
+				width: 35em;
+			}
+		</style>
+		<script type="text/javascript">
+		function cargarDatos() {  
+			document.getElementById("nombre2").innerHTML = localStorage.getItem("nombre");
+			document.getElementById("email2").innerHTML = localStorage.getItem("email");
+			document.getElementById("fecha2").innerHTML = localStorage.getItem("fecha");
+			document.getElementById("ciudad2").innerHTML = localStorage.getItem("ciudad");
+		};
+		</script>
+	</head>
+	<body onload="cargarDatos()">
+		<div id="lblTitulo">
+			<h1 id="titulo">Green Leaves</h1>
+			<img id="logo" src="https://www.metrosales.com/wp-content/uploads/2016/09/Green-Initiatives-Leaf.png">
+		</div>
+		<div id="mensaje">
+			<p>Estimado <label style="font-weight: bold;" type="text" id="nombre2"></label>,</p>
+			<p>Hemos recibido sus datos y nos pondremos en contacto con usted a la brevedad posible. Enviaremos un correo con información a su cuenta: <label style="text-decoration: underline; color: blue;" type="text" id="email2" ></label></p>
+			<p class=".parr" align="right">Atte.</p>
+			<p class=".parr" align="right" style="color:green; font-weight:bold;">Green Leaves</p>
+			<p class=".parr" align="right" style="font-style: italic;"><label type="text" id="ciudad2"></label> a <label type="text" id="fecha2"></label></p>
+		</div>
+	</body>
+</html>
